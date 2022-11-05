@@ -22,13 +22,9 @@ namespace Game21
             currentPlayer = 1;
         }
 
-        public void StartGame()
-        {
-            gameDeck.Shuffle();
 
-        }
         
-        public player GetCurrentPlayer()
+        public Player GetCurrentPlayer()
         {
             if (currentPlayer == 1)
                 return player1;
@@ -48,7 +44,6 @@ namespace Game21
 
         public bool IsGameOver()
         {
-
             if (player1.GetPoints() == 21 || player2.GetPoints() == 21 )
                 return true;
             if (!player1.IsActive() || !player1.IsActive())
