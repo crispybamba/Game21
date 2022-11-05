@@ -25,7 +25,7 @@ namespace Game21
         }
         public Shape GetShape() { return shape; }
         public int GetValue() { return value; }
-
+        public void SetValue(int value) { this.value = value; }
         public string GetDesc()
         {
             StringBuilder sb = new StringBuilder();
@@ -33,21 +33,18 @@ namespace Game21
             sb.Append("\n");
             sb.Append("The Shape is: " + shape.ToString());
             return sb.ToString();
-        }//need to check (this is the same as function ToString())...
-        //to check picture cards... king..
+        }
 
         public bool IsAce()
         {
-            //ace might be 1 and might be 14
-            if (value == 1 || value == 11) 
+            if (value == 11) 
                 return true;
             return false;
         }
 
         public bool IsPictureCard()
         {
-            //jack is 11, queen is 12, king is 13
-            if (value <= 11 && value >= 13)
+            if (value == 10)
                 return true;
             return false;
         }

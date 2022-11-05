@@ -16,22 +16,27 @@ namespace Game21
         {
             cards = InitDeck();
         }
- 
+
 
         private static List<Card> InitDeck()
         {
             List<Card> cards = new List<Card>();
-            for (int i = 0; i < 14; i++)
+            for (int i = 2; i < 15; i++)
                 foreach (Shape j in Enum.GetValues(typeof(Shape)))
                 {
                     if (i <= 10)
                     {
-                    Card card = new Card(j, i);
-                    cards.Add(card);
-                }
-                    else
+                        Card card = new Card(j, i);
+                        cards.Add(card);
+                    }
+                    else if(i < 14)
                     {
                         Card card = new Card(j, 10);
+                        cards.Add(card);
+                    }
+                    else
+                    {
+                        cards.Add(new Card(j, 11));
                         cards.Add(card);
                     }
                 }
