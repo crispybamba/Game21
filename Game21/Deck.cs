@@ -36,7 +36,7 @@ namespace Game21
                     }
                     else
                     {
-                        cards.Add(new Card(j, 11));
+                        Card card = new Card(j, 11);
                         cards.Add(card);
                     }
                 }

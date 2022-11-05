@@ -28,9 +28,7 @@ namespace Game21
         public void GetCard (Card card)
         {
             cards.Add(card);
-
-            
-            points+= card.GetValue();
+            points += card.GetValue();
         }
         
         public void Quit() => active = false;
@@ -50,16 +48,23 @@ namespace Game21
             {
                 for(int i = 0; i < cards.Count; i++)
                     if (cards[i].IsAce())
-                        cards[i].SetValue(1)
+                        cards[i].SetValue(1);
                 points = points - 10;
+                Lost();
             }
+            return false;
                 
         }
         public bool IsActive() => active;
         public override string ToString()
-        {
-            
-            return "The player - " + name + "\nhave " + points + "points";
+        {   
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i < cards.Count; i++)
+            {
+                sb.Append(cards[i].ToString());
+                sb.Append("\n");
+            }
+            return sb.ToString();
         }
         
 

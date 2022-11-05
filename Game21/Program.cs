@@ -11,6 +11,8 @@ namespace Game21
     {
         static void Main(string[] args)
         {
+            Game game = new Game("p1", "p2");
+            game.play();
         }
     }
 }
