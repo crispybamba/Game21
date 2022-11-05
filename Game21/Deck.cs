@@ -68,9 +68,10 @@ namespace Game21
         }
         public Card Deal()
         {
-            return cards[cards.Count - 1];
-        }//to make it.....
-        //פעולה של לחלק קלפים...
+            Card card = cards[cards.Count-1];
+            cards.RemoveAt(cards.Count - 1);
+            return card;
+        }
 
     }
 
