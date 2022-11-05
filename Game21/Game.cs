@@ -45,9 +45,9 @@ namespace Game21
 
         public bool IsGameOver()
         {
-            if (player1.GetPoints() >= 21 || player2.GetPoints() >= 21 )
+            if (player1.GetPoints() > 21 || player2.GetPoints() > 21 )
                 return true;
-            if (!player1.IsActive() || !player1.IsActive())
+            if (!player1.IsActive() || !player2.IsActive()) 
                 return true;
             return false;
         }
@@ -131,6 +131,7 @@ namespace Game21
                             
 			    }
             Console.WriteLine("game overrrrrr");
+            Console.WriteLine("the winner is: " + GetWinner().GetName());
             Console.ReadLine();
 
         }
